@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسينية الأئمة عليهم السلام</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+            background-color: #fff;
+            color: #222;
+            line-height: 1.6;
+            min-height: 100vh;
+            /* Fade-in for the whole page */
+            animation: bodyFadeIn 1.2s cubic-bezier(.4,2,.6,1);
+        }
+        @keyframes bodyFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .header-bar {
+            width: 100vw;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            height: 80px;
+            padding: 0 2rem;
+            box-sizing: border-box;
+            direction: ltr;
+            justify-content: flex-start;
+        }
+
+        .logo-image {
+            width: 110px;
+            height: auto;
+            display: block;
+            margin-top: 16px;
+            filter: drop-shadow(0 0 16px #c8a47b33);
+            transition: filter 0.3s;
+        }
+        .logo-image:hover {
+            filter: drop-shadow(0 0 32px #c8a47b66);
+        }
+
+        .logo-text {
+            color: #222;
+            font-size: 2.2rem;
+            font-family: 'Noto Kufi Arabic', 'Tajawal', Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+            opacity: 0.7;
+            transition: color 0.3s;
+        }
+
+        .banner-section {
+            width: 100vw;
+            min-height: 60vh;
+            background: url('banner.png') top center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            animation: fadeInUp 1.2s 0.2s both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #1a1a1a);
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            margin: 1rem 0;
+            color: #d4af37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: titleFadeIn 1.5s ease-out 0.5s forwards;
+        }
+
+        @keyframes titleFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            max-width: 1200px;
+            min-height: 60vh;
+            margin: 3.5rem auto 0;
+            padding: 2rem 1.5rem 2rem 1.5rem;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            animation: fadeInUp 1.2s 0.4s both;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            color: #c8a47b;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+        .location-desc {
+            color: #c8a47b;
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            line-height: 2.1;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        @media (max-width: 600px) {
+            .header-bar {
+                height: 50px;
+                padding: 0 1rem;
+            }
+            .logo-image {
+                width: 64px;
+            }
+            .banner-section {
+                min-height: 40vh;
+            }
+            .social-toggle-btn {
+                margin: 2.5rem auto 1rem auto;
+                font-size: 1.1rem;
+                padding: 0.7rem 1.5rem;
+            }
+            .contact-title {
+                font-size: 1.05rem;
+                margin-bottom: 0.8rem;
+            }
+            .location-desc {
+                font-size: 0.92rem;
+                margin-bottom: 1.5rem;
+                line-height: 2;
+            }
+            .content {
+                margin: 2.5rem auto 0;
+                padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: 50vh;
+                min-height: 300px;
+                background-attachment: scroll;
+            }
+
+            .title {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .content {
+                padding: 1rem;
+                margin-top: -30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                height: 40vh;
+                min-height: 250px;
+            }
+
+            .title {
+                font-size: 1.75rem;
+            }
+
+            .contact-title {
+                font-size: 1.25rem;
+            }
+
+            .location-desc {
+                font-size: 1rem;
+            }
+        }
+
+        .whatsapp-link {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .whatsapp-link a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+        .whatsapp-link a:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+            color: #fff;
+        }
+
+        .social-toggle-btn {
+            margin: 3.5rem auto 1.5rem auto;
+            padding: 0.75rem 2.5rem;
+            font-size: 1.3rem;
+            font-family: inherit;
+            background: #c8a47b;
+            color: #fff;
+            border: none;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+        }
+        .social-toggle-btn:hover {
+            background: #b08a5c;
+            box-shadow: 0 4px 16px rgba(200,164,123,0.18);
+            color: #fff;
+        }
+        .social-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            background: #fff;
+            border-radius: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+            padding: 1.2rem 2.5rem;
+            margin: 0 auto;
+            max-width: 520px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(30px) scale(0.98);
+            transition: opacity 0.4s cubic-bezier(.4,2,.6,1), transform 0.4s cubic-bezier(.4,2,.6,1);
+        }
+        .social-bar.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0) scale(1);
+        }
+        .social-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            font-size: 2.1rem;
+            background: #f7f7f7;
+            color: #c8a47b;
+            box-shadow: 0 2px 8px rgba(200,164,123,0.08);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            border: none !important;
+        }
+        .social-bar a:hover {
+            background: #c8a47b;
+            color: #fff;
+            transform: scale(1.12) translateY(-4px);
+            box-shadow: 0 8px 24px rgba(200,164,123,0.18);
+        }
+        .social-bar a .fa-whatsapp { color: #25D366; background: none; transition: color 0.2s; }
+        .social-bar a .fa-facebook-f { color: #1877f3; background: none; transition: color 0.2s; }
+        .social-bar a .fa-location-dot { color: #c8a47b; background: none; transition: color 0.2s; }
+        .social-bar a:hover .fa-location-dot { color: #fff; }
+        .social-bar a .fa-youtube { color: #ff0000; background: none; transition: color 0.2s; }
+        .social-bar a .fa-instagram { color: #e4405f; background: none; transition: color 0.2s; }
+        .social-bar a,
+        .social-bar i {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="index.html">
+            <img src="logo.png" alt="شعار حسينية الأئمة" class="logo-image">
+        </a>
+    </div>
+    <div class="banner-section"></div>
+
+    <main class="content">
+        <h2 class="contact-title">حسينية الأئمة بالقطيف - تاروت حي الصدفة</h2>
+        <div class="location-desc">
+            اشترك في قنواتنا وفعّل خاصية التنبيهات لتصلك إعلانات المأتم وإشعار البث المباشر والفيديوهات المرفوعة
+        </div>
+        <button class="social-toggle-btn" onclick="toggleSocialBar()">وسائل التواصل الرسمية</button>
+        <div class="social-bar" id="socialBar">
+            <a href="https://chat.whatsapp.com/JPD3d49mGgmHR9vVDKgLsJ" target="_blank" rel="noopener" aria-label="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/14emam?mibextid=ZbWKwL" target="_blank" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.google.com/maps?q=H38C+H6V+%D8%AD%D8%B3%D9%8A%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D8%A7%D8%A6%D9%85%D8%A9+%D8%B9%D9%84%D9%8A%D9%87%D9%85+%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85+-+%D8%AA%D8%A7%D8%B1%D9%88%D8%AA%D8%8C+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%AC%D8%B9%D9%81%D8%B1+%D8%A7%D9%84%D8%B7%D9%8A%D8%A7%D8%B1,+Al+Sadafah,+Tarout+32613&ftid=0x3e4a01d3793fe359:0x9279967e5a463f4c&hl=en&gl=us&entry=gps&lucs=,47071704&g_ep=CAISBjYuNzEuMhgAINeCAyoJLDQ3MDcxNzA0QgJTQQ%3D%3D&g_st=iwb" target="_blank" aria-label="الموقع"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="https://www.youtube.com/@hasinihalaymh" target="_blank" aria-label="يوتيوب"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/hussainiat_alaemah/?igshid=YmMyMTA2M2Y%3D" target="_blank" aria-label="انستجرام"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </main>
+
+    <script>
+    function toggleSocialBar() {
+        var bar = document.getElementById('socialBar');
+        bar.classList.toggle('show');
+    }
+    </script>
+</body>
+</html>
