@@ -132,7 +132,7 @@
 
         .content {
             max-width: 1200px;
-            min-height: 60vh;
+            min-height: 55vh;
             margin: 3.5rem auto 0;
             padding: 2rem 1.5rem 2rem 1.5rem;
             position: relative;
@@ -145,7 +145,7 @@
         }
 
         .contact-title {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             color: #c8a47b;
             margin-bottom: 1.2rem;
             font-weight: 700;
@@ -154,13 +154,23 @@
         }
         .location-desc {
             color: #c8a47b;
-            font-size: 1.05rem;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
             margin-bottom: 2.5rem;
             line-height: 2.1;
             font-weight: 400;
             letter-spacing: 0.2px;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
+        }
+        @media (max-width: 900px) {
+            .content {
+                min-height: 50vh;
+                padding: 1.5rem 1rem 2.5rem 1rem;
+            }
+            .social-toggle-btn {
+                margin: 2.5rem auto 1rem auto;
+                width: 95%;
+            }
         }
         @media (max-width: 600px) {
             .header-bar {
@@ -175,22 +185,21 @@
             }
             .social-toggle-btn {
                 margin: 2.5rem auto 1rem auto;
-                font-size: 1.1rem;
-                padding: 0.7rem 1.5rem;
+                font-size: 1rem;
+                padding: 0.7rem 1rem;
+                width: 100%;
             }
             .contact-title {
-                font-size: 1.05rem;
                 margin-bottom: 0.8rem;
             }
             .location-desc {
-                font-size: 0.92rem;
                 margin-bottom: 1.5rem;
                 line-height: 2;
             }
             .content {
                 margin: 2.5rem auto 0;
-                padding: 1.2rem 0.5rem 4.5rem 0.5rem;
-                min-height: 70vh;
+                padding: 1.2rem 0.5rem 5.5rem 0.5rem;
+                min-height: 45vh;
                 overflow-y: auto;
             }
         }
@@ -260,7 +269,7 @@
         .social-toggle-btn {
             margin: 3.5rem auto 1.5rem auto;
             padding: 0.75rem 2.5rem;
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
             font-family: inherit;
             background: #c8a47b;
             color: #fff;
@@ -269,6 +278,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             cursor: pointer;
             transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            width: 90%;
+            max-width: 400px;
         }
         .social-toggle-btn:hover {
             background: #b08a5c;
